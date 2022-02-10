@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/black">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constrainteee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/scrooll"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_pico"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="56dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Pico"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_hora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="4dp"
+            android:alpha="0.8"
+            android:fontFamily="@font/roboto_regular"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_pico" />
+
+        <ImageView
+            android:id="@+id/ic_wave_azul"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_waves_azul200"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_hora" />
+
+        <TextView
+            android:id="@+id/tv_height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="0m"
+            android:textColor="@color/white"
+            android:textSize="90dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ic_wave_azul"
+            app:layout_constraintVertical_bias="1.0" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrooll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scrollbars="none"
+        android:paddingTop="5dp"
+        app:layout_constraintTop_toBottomOf="@id/constrainteee"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="30dp"
+            android:orientation="vertical">
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="155dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="20dp"
+                android:orientation="horizontal"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingEnd="24dp">
+
+                    <LinearLayout
+                        android:id="@+id/linear_wind"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="start"
+                        android:background="@drawable/edt_box"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_wind" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:paddingEnd="30dp"
+                            android:text="Vento"
+                            android:alpha="0.7"
+                            android:textColor="@color/white"
+                            android:textSize="15sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_wind"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="@color/white"
+                                android:textSize="35sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="7dp"
+                                android:paddingEnd="20dp"
+                                android:text="m/s"
+                                android:textColor="@color/white"
+                                android:textSize="15sp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="start"
+                        android:layout_marginStart="12dp"
+                        android:background="@drawable/edt_box"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_period" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:paddingEnd="30dp"
+                            android:text="Período"
+                            android:alpha="0.7"
+                            android:textColor="@color/white"
+                            android:textSize="15sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_period"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="@color/white"
+                                android:textSize="35sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="7dp"
+                                android:paddingEnd="20dp"
+                                android:text="s"
+                                android:textColor="@color/white"
+                                android:textSize="15sp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="start"
+                        android:layout_marginStart="12dp"
+                        android:background="@drawable/edt_box"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_temp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha="0.7"
+                            android:paddingEnd="30dp"
+                            android:text="Temp. Água"
+                            android:textColor="@color/white"
+                            android:textSize="15sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_temp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="@color/white"
+                                android:textSize="35sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="7dp"
+                                android:paddingEnd="20dp"
+                                android:text="C"
+                                android:textColor="@color/white"
+                                android:textSize="15sp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="28dp">
+
+                <TableRow
+                    android:background="@drawable/edt_row"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_weight="4"
+                        android:text="Data"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/date1"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:text="25/01"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/date2"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:text="26/01"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/date3"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:text="27/01"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/date4"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:text="28/01"
+                        android:textColor="@color/white" />
+                </TableRow>
+                <TableRow
+                    android:background="@color/black">
+
+                    <TextView
+                        android:layout_weight="4"
+                        android:text="Altura"
+                        android:background="@color/black"
+                        android:padding="10dp"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/tv_height2"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:text="--"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/tv_height3"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:text="--"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/tv_height4"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:text="--"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/tv_height5"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:text="--"
+                        android:textColor="@color/white" />
+                </TableRow>
+                <TableRow
+                    android:background="@color/black">
+
+                    <TextView
+                        android:layout_weight="4"
+                        android:text="Vento (m/s)"
+                        android:background="@color/black"
+                        android:padding="10dp"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/tv_wind2"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:text="--"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/tv_wind3"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:text="--"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/tv_wind4"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:text="--"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/tv_wind5"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:text="--"
+                        android:textColor="@color/white" />
+                </TableRow>
+                <TableRow
+                    android:background="@color/black"
+                    >
+
+                    <TextView
+                        android:layout_weight="4"
+                        android:text="Período (s)"
+                        android:background="@color/black"
+                        android:padding="10dp"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/tv_period2"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:text="--"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/tv_period3"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:text="--"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/tv_period4"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:text="--"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/tv_period5"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:text="--"
+                        android:textColor="@color/white" />
+                </TableRow>
+                <TableRow
+                    android:background="@color/black"
+                    >
+
+                    <TextView
+                        android:layout_weight="4"
+                        android:text="Temp. (C)"
+                        android:background="@color/black"
+                        android:padding="10dp"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/tv_temp2"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:text="--"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/tv_temp3"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:text="--"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/tv_temp4"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:text="--"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/tv_temp5"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:text="--"
+                        android:textColor="@color/white" />
+                </TableRow>
+
+            </TableLayout>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                app:dividerColor="@color/white"
+                android:alpha="0.4"
+                app:dividerThickness="0.3dp"/>
+
+            <TextView
+                android:id="@+id/tv_label_fav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:textSize="16sp"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/white"
+                android:text="Seus picos favoritos" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_lista_fav"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="20dp" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:layout_gravity="bottom|right"
+        android:clickable="true"
+        android:tint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_picos" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
